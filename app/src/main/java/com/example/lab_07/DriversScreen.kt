@@ -20,7 +20,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.compose.foundation.lazy.items
-import androidx.compose.ui.Alignment
 
 @Composable
 fun DriversScreen(navController: NavController) {
@@ -65,6 +64,15 @@ fun DriversScreen(navController: NavController) {
                 modifier = Modifier.align(Alignment.CenterVertically)
             ) {
                 Text("Add")
+            }
+
+            Button(
+                onClick = {
+                    drivers = emptyList()
+                },
+                modifier = Modifier.align(Alignment.CenterVertically)
+            ) {
+                Text("Clear")
             }
 
         }
