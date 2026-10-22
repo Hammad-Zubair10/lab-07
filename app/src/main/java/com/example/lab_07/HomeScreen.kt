@@ -19,6 +19,7 @@ import androidx.navigation.NavController
 class HomeScreen {
 }
 
+
 @Composable
 fun HomeScreen(navController: NavController) {
     Column(
@@ -41,5 +42,14 @@ fun HomeScreen(navController: NavController) {
         ) {
             Text("Upcoming Races")
         }
+
+        Button(
+            onClick = {
+                navController.navigate("drivers")
+            }
+        ) {
+            Text("Drivers")
+        }
+
     }
 }
