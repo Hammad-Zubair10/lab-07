@@ -20,6 +20,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.compose.foundation.lazy.items
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun DriversScreen(navController: NavController) {
@@ -34,14 +36,16 @@ fun DriversScreen(navController: NavController) {
     ) {
         Button(
             onClick = {
-                navController.navigate("home")
-            }
+                navController.popBackStack()
+            },
+            modifier = Modifier.testTag("homeButton")
         ) {
             Text("Home")
         }
 
         Text(
             text = "FormulaZero Drivers",
+            fontSize = 30.sp
         )
 
         Row(
@@ -51,7 +55,9 @@ fun DriversScreen(navController: NavController) {
                 value = driverName,
                 onValueChange = { driverName = it },
                 label = { Text("Driver Name") },
-                modifier = Modifier.weight(1f)
+                modifier = Modifier
+                    .weight(1f)
+                    .testTag("driverInput")
             )
 
             Button(
@@ -61,16 +67,21 @@ fun DriversScreen(navController: NavController) {
                         driverName = ""
                     }
                 },
-                modifier = Modifier.align(Alignment.CenterVertically)
+                modifier = Modifier
+                    .align(Alignment.CenterVertically)
+                    .testTag("addDriverButton")
             ) {
                 Text("Add")
             }
 
             Button(
                 onClick = {
+                    if (drivers.isNotEmpty())
                     drivers = emptyList()
                 },
-                modifier = Modifier.align(Alignment.CenterVertically)
+                modifier = Modifier
+                    .align(Alignment.CenterVertically)
+                    .testTag("clearDrivers")
             ) {
                 Text("Clear")
             }

@@ -46,7 +46,8 @@ fun HomeScreen(navController: NavController) {
         Button(
             onClick = {
                 navController.navigate("drivers")
-            }
+            },
+            modifier = Modifier.testTag("driverButton")
         ) {
             Text("Drivers")
         }
