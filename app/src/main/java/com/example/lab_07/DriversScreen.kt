@@ -38,7 +38,7 @@ fun DriversScreen(navController: NavController) {
             onClick = {
                 navController.popBackStack()
             },
-            modifier = Modifier.testTag("homeButton")
+            modifier = Modifier.testTag("homeButton")             // for testing
         ) {
             Text("Home")
         }
@@ -57,7 +57,7 @@ fun DriversScreen(navController: NavController) {
                 label = { Text("Driver Name") },
                 modifier = Modifier
                     .weight(1f)
-                    .testTag("driverInput")
+                    .testTag("driverInput")               // for testing
             )
 
             Button(
@@ -69,7 +69,7 @@ fun DriversScreen(navController: NavController) {
                 },
                 modifier = Modifier
                     .align(Alignment.CenterVertically)
-                    .testTag("addDriverButton")
+                    .testTag("addDriverButton")              // for testing
             ) {
                 Text("Add")
             }
@@ -81,7 +81,7 @@ fun DriversScreen(navController: NavController) {
                 },
                 modifier = Modifier
                     .align(Alignment.CenterVertically)
-                    .testTag("clearDrivers")
+                    .testTag("clearDrivers")            // for testing
             ) {
                 Text("Clear")
             }
